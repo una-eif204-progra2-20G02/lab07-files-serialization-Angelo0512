@@ -9,7 +9,7 @@ void SavePersonBinary::save(VectorPerson vectorPer) {
     std::ofstream file;
 
     try{
-        file.open("PersonBinaryFile", std::ios::app | std::ios::binary);
+        file.open("PersonBinaryFile.txt", std::ios::app | std::ios::binary);
     }
     catch(std::ifstream::failure& a){
         throw std::exception();

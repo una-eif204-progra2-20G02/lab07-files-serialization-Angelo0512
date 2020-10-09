@@ -15,7 +15,7 @@ void SavePersonJson::save(VectorPerson vectorPer) {
     std::ofstream file;
 
     try{
-        file.open("PersonJsonFile", std::ios::binary);
+        file.open("PersonJsonFile.txt", std::ios::binary);
     }
     catch(std::ifstream::failure& e){
         throw std::exception();
