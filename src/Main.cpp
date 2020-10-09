@@ -4,6 +4,8 @@
 
 #include "VectorPerson.h"
 #include "SavePersonJson.h"
+#include "SavePersonBinary.h"
+
 #include<iostream>
 
 int main(){
@@ -17,7 +19,7 @@ int main(){
     vector.addPerson(persona3);
     std::cout << vector;
 
-    ISaveFile* personFile = new SavePersonJson();
+    ISaveFile* personFile = new SavePersonBinary();
 
     personFile->save(vector);
 
