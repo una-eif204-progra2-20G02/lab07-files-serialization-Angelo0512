@@ -2,9 +2,10 @@
 // Created by Angelo on 8/10/2020.
 //
 
-#include "VectorPerson.h"
-#include "SavePersonJson.h"
+
+#include "FileManager.h"
 #include "SavePersonBinary.h"
+#include "SavePersonJson.h"
 
 #include<iostream>
 
@@ -19,9 +20,22 @@ int main(){
     vector.addPerson(persona3);
     std::cout << vector;
 
-    ISaveFile* personFile = new SavePersonBinary();
+    ISaveFile* binaryFile = new SavePersonBinary;
+    ISaveFile* jsonFile = new SavePersonJson;
 
-    personFile->save(vector);
+    try {
+        FileManager::serialize(binaryFile, vector);
+    }
+    catch(std::exception& e){
+        std::cout << "Archivo Binario no encontrado" << std::endl;
+    }
+
+    try {
+        FileManager::serialize(jsonFile, vector);
+    }
+    catch(std::exception& e){
+        std::cout << "Archivo Json no encontrado" << std::endl;
+    }
 
     return 0;
 

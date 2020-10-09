@@ -18,7 +18,7 @@ void SavePersonJson::save(VectorPerson vectorPer) {
         file.open("PersonJsonFile", std::ios::binary);
     }
     catch(std::ifstream::failure& e){
-        exit(1);
+        throw std::exception();
     }
 
     file << vectorJson;

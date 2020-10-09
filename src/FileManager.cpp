@@ -3,3 +3,8 @@
 //
 
 #include "FileManager.h"
+
+void FileManager::serialize(ISaveFile * file, const VectorPerson & vectorPer) {
+
+    file->save(vectorPer);
+}

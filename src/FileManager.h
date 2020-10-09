@@ -5,9 +5,11 @@
 #ifndef MY_PROJECT_NAME_FILEMANAGER_H
 #define MY_PROJECT_NAME_FILEMANAGER_H
 
+#include "ISaveFile.h"
 
 class FileManager {
-
+public:
+    static void serialize(ISaveFile*, const VectorPerson&);
 };
 
 
