@@ -20,6 +20,8 @@ public:
 
     Person getPerson(int);
 
+    int getSize();
+
     friend std::ostream &operator<<(std::ostream &os, const VectorPerson &persona);
 
 private:

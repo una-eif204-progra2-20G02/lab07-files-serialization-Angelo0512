@@ -27,3 +27,7 @@ Person VectorPerson::getPerson(int pos) {
     return Persons[pos];
 }
 
+int VectorPerson::getSize() {
+    return Persons.size();
+}
+

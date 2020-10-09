@@ -3,6 +3,7 @@
 //
 
 #include "VectorPerson.h"
+#include "SavePersonJson.h"
 #include<iostream>
 
 int main(){
@@ -16,12 +17,10 @@ int main(){
     vector.addPerson(persona3);
     std::cout << vector;
 
-    try{
-        std::cout << vector.getPerson(3) << std::endl;
-    }
-    catch(std::exception& e) {
-        std::cout << "Posicion no valida" << std::endl;
-    }
+    ISaveFile* personFile = new SavePersonJson();
+
+    personFile->save(vector);
+
     return 0;
 
 };
